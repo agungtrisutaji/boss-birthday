@@ -104,13 +104,11 @@ export async function POST(request: NextRequest) {
     // Insert into database
     const { data, error } = await supabaseAdmin
       .from("greetings")
-      .insert([
-        {
-          name,
-          message,
-          emoji: emoji || null,
-        },
-      ])
+      .insert({
+        name,
+        message,
+        emoji: emoji || null,
+      } as any)
       .select()
       .single();
 
