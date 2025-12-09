@@ -119,10 +119,10 @@ export function Navbar() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
-                      variant="ghost"
+                      variant={isPlaying ? "default" : "destructive"}
                       size="icon"
                       onClick={toggleMusic}
-                      className="ml-2"
+                      className="ml-2 shadow-lg hover:scale-110 transition-all duration-200 animate-pulse"
                     >
                       {isPlaying ? (
                         <Volume2 className="h-5 w-5" />
